@@ -1,114 +1,301 @@
-/* definition of sources */
-@font-face {
-    font-family: "Unbounded";
-    src: url("../fonts/Unbounded-Bold.ttf")
-    format("truetype");
-    font-weight: 700;
-    font-style: normal;
-    font-display; swap: 
-}
+/* ========================================
+   FONTES
+======================================== */
 
 @font-face {
     font-family: "Poppins";
-    src: url("../fonts/Poppins-Regular.ttf")
-    format("truetype");
+    src: url("../fonts/Poppins-Regular.ttf") format("truetype");
     font-weight: 400;
     font-style: normal;
-    font-display; swap: 
+    font-display: swap;
 }
 
-/* reset */
-* {
+@font-face {
+    font-family: "Unbounded";
+    src: url("../fonts/Unbounded-Bold.ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+/* ========================================
+   RESET
+======================================== */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-/* desktop style */
-body{
+html {
+    width: 100%;
+    min-height: 100%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+
     background-color: #0E1014;
-    color: #ffffff;
-    font-family: "Poppins";
-    font-size: 24px;
-}
+    color: #FFFFFF;
 
- h1{
-    font-size: 64px;
-    font-family: "Unbounded", sans-serif;
-    text-align: center;
-    margin-top: 60px;
-}
-
-p{
     font-family: "Poppins", sans-serif;
-    font-size: 24px;
-    text-align: center;
-    margin: 24px auto;
-    width: 792px;
+    font-size: 16px;
+
+    overflow-x: hidden;
+
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
 }
 
-h1 span{
-    color: #9747FF;
+
+/* ========================================
+   HEADER
+======================================== */
+
+.header {
+    width: 100%;
+    padding-top: 75px;
 }
 
-a{
-    color: #ffffff;
-    font-family: "Poppins", sans-serif;
-    font-size: 24px;
-    text-decoration: none;
-    background-color: #9747FF;
-    width: 340px;
-    height: 66px;
+.header img {
     display: block;
-    text-align: center;
-    line-height: 66px;
-    border-radius: 36px;
-    margin: 40px auto;
-}
 
-a:hover{
-    background-color: #8233E8;
-}
+    width: 220px;
+    max-width: calc(100% - 32px);
+    height: auto;
 
-section img{
-    display: block;
-    width: 792px;
-    height: 446px;
     margin: 0 auto;
 }
 
-header img{
+
+/* ========================================
+   HERO
+======================================== */
+
+.hero {
+    width: 100%;
+
+    padding-top: 60px;
+    padding-bottom: 60px;
+
+    text-align: center;
+}
+
+
+/* ========================================
+   TÍTULO
+======================================== */
+
+.hero h1 {
+    width: min(1200px, calc(100% - 32px));
+
+    margin: 0 auto;
+
+    font-family: "Unbounded", sans-serif;
+    font-size: 64px;
+    font-weight: 700;
+    line-height: 1.15;
+
+    text-align: center;
+}
+
+.hero h1 span {
+    color: #9747FF;
+}
+
+
+/* ========================================
+   PARÁGRAFO
+======================================== */
+
+.hero p {
+    width: min(792px, calc(100% - 40px));
+
+    margin: 24px auto 0;
+
+    font-family: "Poppins", sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 1.5;
+
+    text-align: center;
+}
+
+
+/* ========================================
+   BOTÃO
+======================================== */
+
+.hero-button {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 340px;
+    max-width: calc(100% - 40px);
+    min-height: 66px;
+
+    margin: 40px auto;
+
+    border-radius: 36px;
+
+    background-color: #9747FF;
+    color: #FFFFFF;
+
+    font-family: "Poppins", sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+
+    text-decoration: none;
+
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.hero-button:hover {
+    background-color: #8233E8;
+}
+
+.hero-button:active {
+    transform: scale(0.98);
+}
+
+
+/* ========================================
+   IMAGEM PRINCIPAL
+======================================== */
+
+.hero-image {
     display: block;
-    margin: 75px 0 0 360px;
+
+    width: min(792px, calc(100% - 40px));
+
+    margin: 0 auto;
 }
 
-/* style tablet */
-@media(max-width: 768px){
-    header img{
-        margin:65px 0 0 60px;
+.hero-image img {
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    margin: 0 auto;
+}
+
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 768px) {
+
+    .header {
+        padding-top: 65px;
     }
 
-    p{
-        width: 648px;
+    .hero {
+        padding-top: 52px;
+        padding-bottom: 48px;
+    }
+
+    .hero h1 {
+        font-size: 52px;
+    }
+
+    .hero p {
+        font-size: 22px;
+    }
+
+    .hero-button {
+        width: 320px;
+        min-height: 64px;
+
+        font-size: 22px;
+    }
+
+    .hero-image {
+        width: calc(100% - 32px);
     }
 }
-/* style mobile */
-@media(max-width: 375px){
-    header img{
-        margin:32px 0 0 16px;
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 480px) {
+
+    .header {
+        padding-top: 32px;
     }
-    h1{
-        font-size: 40px;
+
+    .header img {
+        width: 190px;
     }
-    p{
+
+    .hero {
+        padding-top: 40px;
+        padding-bottom: 32px;
+    }
+
+    .hero h1 {
+        width: calc(100% - 32px);
+
+        font-size: clamp(32px, 10vw, 40px);
+        line-height: 1.2;
+    }
+
+    .hero p {
+        width: calc(100% - 32px);
+
+        margin-top: 20px;
+
         font-size: 20px;
-        width: 340px;
+        line-height: 1.5;
     }
-    a{
-        font-size: 20px;
+
+    .hero-button {
         width: 251px;
+        max-width: calc(100% - 32px);
+        min-height: 60px;
+
+        margin-top: 32px;
+        margin-bottom: 32px;
+
+        font-size: 20px;
     }
-    section img{
-        width: 340px;
-        height: 230px;
+
+    .hero-image {
+        width: calc(100% - 32px);
     }
+}
+
+
+/* ========================================
+   TELAS MUITO PEQUENAS
+======================================== */
+
+@media (max-width: 360px) {
+
+    .hero h1 {
+        font-size: 30px;
+    }
+
+    .hero p {
+        font-size: 18px;
+    }
+
+    .hero-button {
+        font-size: 18px;
+    }
+
 }
