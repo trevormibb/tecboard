@@ -11,6 +11,20 @@
     <meta name="og:url" content="https://trevormibb.github.io/tecboard/">
 
     <link rel="icon" href="favicon-tecboard-roxo.svg" type="image/svg+xml">
+
+    <!-- Preload das fontes -->
+    <link rel="preload" href="fonts/Poppins-Regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/Unbounded-Bold.woff2" as="font" type="font/woff2" crossorigin>
+
+    <!-- Preload da imagem principal (LCP) -->
+    <link
+        rel="preload"
+        as="image"
+        href="img/celulares-sobrepostos-desktop.webp"
+        imagesrcset="img/celulares-sobrepostos-mobile.webp 480w, img/celulares-sobrepostos-desktop.webp 792w"
+        imagesizes="(max-width: 480px) 100vw, 792px"
+    >
+
     <link rel="stylesheet" href="css/style.css">
 
     <title>Tecboard</title>
@@ -20,7 +34,7 @@
 
 <body>
     <header class="header">
-        <img src="img/white-logo.png" alt="Logo do Tecboard App na cor branca" width="220" height="auto">
+        <img src="img/white-logo.png" alt="Logo do Tecboard App na cor branca" width="220" height="63">
     </header>
 
     <main>
@@ -35,13 +49,25 @@
             <a class="hero-button" href="#" title="Teste a versão demo do App Tecboard">Testar versão demo</a>
 
             <picture class="hero-image">
-                <source media="(max-width: 480px)" srcset="img/celulares-sobrepostos-mobile.png">
+                <source
+                    media="(max-width: 480px)"
+                    srcset="img/celulares-sobrepostos-mobile.webp"
+                    type="image/webp"
+                >
+                <source
+                    media="(max-width: 480px)"
+                    srcset="img/celulares-sobrepostos-mobile.png"
+                >
+                <source
+                    srcset="img/celulares-sobrepostos-desktop.webp"
+                    type="image/webp"
+                >
 
                 <img
                     src="img/celulares-sobrepostos-desktop.png"
                     alt="Tela do App Tecboard em dois celulares pretos sobrepostos, com destaque para o hub de evento de tecnologia."
                     width="792"
-                    height="auto"
+                    height="446"
                     fetchpriority="high"
                     decoding="async"
                 >
